@@ -1,0 +1,452 @@
+* {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    /* scroll-padding-top: 6rem; */
+}
+
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: white;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #333333;
+}
+
+body {
+    background-color: #222222;
+}
+
+section {
+    padding: 5rem 9%;
+}
+
+.heading {
+    color: white;
+    font-size: 3rem;
+    font-weight: 200;
+    text-align: center;
+    padding-bottom: 4rem;
+}
+
+.heading span {
+    font-weight: 700;
+}
+
+.btn {
+    background-color: rgb(125, 125, 39);
+    font-size: 1.7rem;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    color: white;
+    text-transform: uppercase;
+    margin-right: 1rem;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+/* header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 5rem 9%;
+    z-index: 100;
+}
+
+.header.active {
+    background-color: white;
+    padding: 3rem 9%;
+}
+
+.header.active .navbar a {
+    color: #222222;
+}
+
+.header.active .navbar a:hover {
+    color: #bac964;
+}
+
+.header.active .menu {
+    color: #222222;
+}
+
+.header .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .navbar a {
+    font-size: 1.5rem;
+    color: white;
+    padding: 0 2rem;
+    letter-spacing: 0.3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.header .navbar a:hover {
+    color: yellow;
+    padding: 0 2.3rem;
+    font-size: 1.8rem;
+}
+
+.header .menu {
+    font-size: 2.5rem;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    display: none;
+}
+
+/* header */
+/* home */
+.home {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assets/cover_pic.jpg');
+    filter: grayscale(100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.home .hero-text {
+    font-size: 7rem;
+    color: white;
+    font-weight: 200;
+    line-height: 1.2;
+}
+
+.home .hero-text span {
+    font-weight: 500;
+}
+
+.home p {
+    color: #d3cdcd;
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    letter-spacing: 0.3rem;
+}
+
+/* home */
+/* portfolio */
+.portfolio {
+    color: #d3cdcd;
+    font-size: 1.8rem;
+    letter-spacing: 0.3rem;
+    text-align: center;
+    background-color: black;
+}
+
+.portfolio span {
+    color: #968c8c;
+}
+
+/* portfolio */
+
+/*resume*/
+.resume .col-container .col .box {
+    background-color: #333333;
+    padding: 2.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.resume .col-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 4rem;
+}
+
+.resume .col-container .col h2 {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 200;
+    padding-bottom: 2rem;
+}
+
+.resume .col-container .col .box span {
+    color: white;
+    font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+}
+
+.resume .col-container .col .box span i {
+    padding-right: 0.5rem;
+    font-size: 1.7rem;
+}
+
+.resume .col-container .col .box h3 {
+    color: #bac964;
+    font-size: 2rem;
+    margin-top: 1rem;
+    font-weight: 400;
+}
+
+.resume .col-container .col .box p {
+    font-size: 1.7rem;
+    color: #ababab;
+    margin-top: 1rem;
+    line-height: 1.5;
+    text-transform: none;
+}
+
+.resume .col-container .col .box .university {
+    color: #808080;
+    text-transform: capitalize;
+}
+
+/*resume*/
+
+/* project */
+.project .box-container .box .description {
+    height: 40rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.project .box-container .box .description h1 {
+    color: #bac964;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.project .box-container .box .description h3 {
+    color: white;
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.project .box-container .box .description h3 span {
+    color: #ababab;
+}
+
+.project .box-container .box .description h3 a {
+    color: #bac964;
+    text-decoration: underline;
+    letter-spacing: 0.2rem;
+    text-transform: lowercase;
+}
+
+.project .box-container .box .description h3 a:hover {
+    font-size: 1.6rem;
+}
+
+.project .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 4rem;
+}
+
+.project .box-container .box {
+    background-color: #333333;
+    padding: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+
+.project .box-container .box .description .content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #333333;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(100%);
+}
+
+.project .box-container .box .description .content h2 {
+    font-size: 2rem;
+    color: white;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.project .box-container .box:hover .description .content {
+    transform: translateY(0);
+}
+
+/* project */
+/* about */
+.about .box-container .box .image {
+    height: 100%;
+    overflow: hidden;
+
+}
+
+.about .box-container .box .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 4rem;
+}
+
+.about .box-container .box p {
+    color: #ababab;
+    margin-bottom: 2rem;
+    font-size: 1.7rem;
+    letter-spacing: 0.1rem;
+    line-height: 1.5;
+    text-transform: none;
+}
+
+/* about */
+/* contact */
+.contact .col-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 6rem;
+}
+
+.contact .col-container .col h2 {
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 200;
+    padding-bottom: 5rem;
+}
+
+.contact .col-container .col input,
+.contact .col-container .col textarea {
+    background-color: #333333;
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.7rem;
+    color: #ababab;
+    margin: 0.5rem 0;
+    resize: vertical;
+}
+
+.contact .col-container .col p {
+    font-size: 1.7rem;
+    color: #bac964;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.contact .col-container .col span {
+    font-size: 1.5rem;
+    color: #ababab;
+    letter-spacing: 0.1rem;
+}
+
+/* contact */
+
+/* footer */
+.footer {
+    border-top: 0.2rem solid #333333;
+    text-align: center;
+}
+
+.footer .socials ion-icon {
+    font-size: 2.5rem;
+    color: #bac964;
+    background-color: #333333;
+    border-radius: 50%;
+    padding: 1rem;
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.footer p {
+    font-size: 1.7rem;
+    color: #ababab;
+    margin-top: 3rem;
+}
+
+/* footer */
+
+/* media queries */
+@media (max-width: 1200px) {
+    .header {
+        padding: 3rem 2rem;
+    }
+
+    .header.active {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .header .menu {
+        display: block;
+    }
+
+    .header .navbar {
+        position: fixed;
+        top: 6rem;
+        left: 0;
+        right: 0;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+    }
+
+    .header .navbar.show {
+        transform: translateX(0);
+    }
+
+    .header .navbar a {
+        color: #222222;
+        margin: 0;
+        font-size: 2rem;
+        margin: 2rem 0;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+
+    .home .hero-text {
+        font-size: 6rem;
+    }
+}
+
+/* media queries */
