@@ -59,3 +59,71 @@ window.addEventListener('resize', () => {
         navbar.classList.remove('show');
     }
 });
+
+// ========== Lightbox Gallery ==========
+const galleryImages = {
+    ecom: [
+        './assets/projects/ecom-1.png',
+        './assets/projects/ecom-2.png',
+        './assets/projects/ecom-3.png',
+        './assets/projects/ecom-4.png',
+        './assets/projects/ecom-5.png',
+        './assets/projects/ecom-6.png',
+    ],
+};
+
+let currentIndex = 0;
+let currentGallery = '';
+
+function openLightbox(index, gallery) {
+    currentIndex = index;
+    currentGallery = gallery;
+    const images = galleryImages[gallery];
+    if (!images) return;
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const counter = document.getElementById('lightbox-counter');
+
+    lightboxImg.src = images[index];
+    counter.textContent = `${index + 1} / ${images.length}`;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(e) {
+    if (e) e.stopPropagation();
+    const lightbox = document.getElementById('lightbox');
+    // Only close if clicking overlay background or close button
+    if (e && e.target !== lightbox && !e.target.classList.contains('lightbox-close')) return;
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function navigateLightbox(direction, e) {
+    if (e) e.stopPropagation();
+    const images = galleryImages[currentGallery];
+    if (!images) return;
+
+    currentIndex = (currentIndex + direction + images.length) % images.length;
+    const lightboxImg = document.getElementById('lightbox-img');
+    const counter = document.getElementById('lightbox-counter');
+
+    lightboxImg.src = images[currentIndex];
+    counter.textContent = `${currentIndex + 1} / ${images.length}`;
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox.classList.contains('active')) return;
+
+    if (e.key === 'Escape') {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    } else if (e.key === 'ArrowLeft') {
+        navigateLightbox(-1);
+    } else if (e.key === 'ArrowRight') {
+        navigateLightbox(1);
+    }
+});
